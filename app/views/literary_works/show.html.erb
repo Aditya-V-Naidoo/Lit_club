@@ -1,0 +1,22 @@
+<html>
+<header class = "container">
+<div id = "Top_header">
+  <div id = "title">  
+    <h1> Literature Club </h1>
+  </div>
+<nav>
+<ul>
+    <li><%= link_to 'Edit Literary Work', edit_literary_work_path(@literary_work)%></li>
+    <li><a href = "/literary_works"> Back to Literary Works </a></li>
+</ul>
+</nav>
+</div>
+</header>
+    <body class = "LightMode">
+    <div id = "card">
+        <p> Title: <%= @literary_work.title%> </p>
+        <p> Literary type: <%= @literary_work.work_type%> </p>
+        <p> <%= @literary_work.literary_work %> </p>
+    </div>
+    </body>
+</html>

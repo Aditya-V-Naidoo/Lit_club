@@ -1,0 +1,26 @@
+<html>
+<header class = "container">
+<div id = "Top_header">
+  <div id = "title">  
+    <h1> Literature Club </h1>
+  </div>
+<nav>
+<ul>
+    <li><a href = "/sessions/new"> Back to Log in </a></li>
+</ul>
+</nav>
+</div>
+</header>
+<body class = "LightMode">
+ <div id = "card">
+    <%= form_with(scope: @user , local: true) do |f| %>
+      <table>
+        <tr><td><p> Security Question: </p></td><td><%= f.text_field :SQ %></td></tr>
+        <tr><td><p> Answer Key: </p></td><td><%= f.text_field :AK %></td></tr>
+        <tr><td><p> <%=  f.label :password %>: </p></td><td><%= f.password_field :password %></td></tr>
+        <tr><td><button type = submit > Change Password </button></td></tr>
+      </table>
+    <% end %>
+ </div>
+</body>
+</html>

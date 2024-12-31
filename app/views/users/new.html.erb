@@ -1,0 +1,32 @@
+<html>
+<header class = "container">
+<div id = "Top_header">
+  <div id = "title">  
+    <h1> Literature Club </h1>
+  </div>
+<nav>
+<ul>
+    <li><a href = "/sessions/new"> Back to Login </a></li>
+</ul>
+</nav>
+</div>
+</header>
+<body class = "LightMode">
+ <div id = "card">
+    <%= form_with mode: :user, url: users_path, local: true do |f| %>
+      <table>
+        <tr><td><p> <%=  f.label :user_name  %>: </p></td><td><%= f.text_field :user_name %></td><td><p> <%=  f.label :email_id  %>: </p></td><td><%= f.text_field :email_id %></td></tr>
+        <tr><td><p> <%=  f.label :password  %>: </p></td><td><%= f.password_field :password %></td></tr>
+        <tr><td><p> Security Question: </p></td><td><%= f.text_field :SQ %></td><td><p> Answer Key: </p></td><td><%= f.text_field :AK %></td></tr>
+        <tr>
+            <td><p> <%= f.label :user_mode %>: </p></td>
+            <td>
+              <%= f.select :user_mode, @user_modes, { prompt: 'Choose a theme...' } %>
+            </td>
+        </tr>
+        <tr><td><button type = submit > Create User </button></td></tr>
+      </table>
+    <% end %>
+ </div>
+</body>
+</html>

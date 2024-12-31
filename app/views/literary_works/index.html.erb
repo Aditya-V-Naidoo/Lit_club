@@ -1,0 +1,29 @@
+<html>
+<header class = "container">
+<div id = "Top_header">
+  <div id = "title">  
+    <h1> Literature Club </h1>
+  </div>
+<nav>
+<ul>
+    <li><a href = "/literary_works/new"> Add Literary Work </a></li>
+</ul>
+</nav>
+</div>
+</header>
+    <body class = "LightMode">
+    <div id = "work">
+        <table>
+            <thead>
+            <tr><td> Title </td><td> Literary work type </td><td> View </td><td> Delete </td></tr>
+            </thead>
+            <tbody>
+            <%@literary_works.each do |literary_work|%>
+            <tr><td><%= literary_work.title %></td><td><%= literary_work.work_type %></td><td><a><%= link_to 'View', literary_work_path(literary_work) %></a></td><td><%= link_to 'Delete', literary_work_path(literary_work), method: :delete %></td></tr>
+            </tbody>
+            <% end %>
+        </table>
+    </div>
+    </body>
+</html>
+

@@ -1,0 +1,32 @@
+<html>
+<header class = "container">
+<div id = "Top_header">
+  <div id = "title">  
+    <h1> Literature Club </h1>
+  </div>
+<nav>
+<ul>
+    <li><a href = "/literary_works"> Back to Literary Works </a></li>
+</ul>
+</nav>
+</div>
+</header>
+<body class = "LightMode">
+ <div id = "card">
+    <%= form_with(model: @user , local: true) do |f| %>
+      <table>
+        <tr><td><p> <%=  f.label :user_name  %>: </p></td><td><%= f.text_field :user_name %></td></tr>
+        <tr><td><p> <%=  f.label :email_id %>: </p></td><td><%= f.text_field :email_id %></td></tr>
+        <tr><td><p> <%=  f.label :password %>: </p></td><td><%= f.password_field :email_id %></td></tr>
+        <tr>
+            <td><p> <%= f.label :user_mode %>: </p></td>
+            <td>
+              <%= f.select :user_mode, @user_modes, { prompt: 'Choose a type...' } %>
+            </td>
+        </tr>
+        <tr><td><button type = submit > Update </button></td></tr>
+      </table>
+    <% end %>
+ </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+<header class = "container">
+<div id = "Top_header">
+  <div id = "title">  
+    <h1> Literature Club </h1>
+  </div>
+<nav>
+<ul>
+    <li><a href = "/literary_works"> Back to Literary Works </a></li>
+</ul>
+</nav>
+</div>
+</header>
+<body class = "LightMode">
+ <div id = "card">
+    <%= form_with scope: :literary_work, url: literary_works_path, local: true do |f| %>
+      <table>
+        <tr><td><p><%=  f.label :title  %></p></td><td><%= f.text_field :title %></td></tr>
+        <tr>
+            <td><p><%= f.label :work_type %></p></td>
+            <td>
+              <%= f.select :work_type, @work_types, { prompt: 'Choose a type...' } %>
+            </td>
+        </tr>
+        <tr><td><p><%=  f.label :literary_work  %></p></td><td><%= f.text_area :literary_work %></td></tr>
+        <tr><td><button type = submit >Add</button></td></tr>
+      </table>
+    <% end %>
+ </div>
+</body>
+</html>

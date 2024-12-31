@@ -1,0 +1,22 @@
+<html>
+<header class = "container">
+<div id = "Top_header">
+  <div id = "title">  
+    <h1> Literature Club </h1>
+  </div>
+</div>
+</header>
+<body class = "LightMode">
+ <div id = "card">
+    <%= form_with scope: :session, url: sessions_path, local: true do |f| %>
+      <table>
+        <tr><td><p> Username / Email ID: </p></td><td><%= f.text_field :user %></td></tr>
+        <tr><td><p> <%=  f.label :password  %>: </p></td><td><%= f.password_field :password %></td></tr>
+        <tr><td><a href = '/change_passwords/new'> Forgot Password </a></td></tr>
+        <tr><td><button type = submit > Login </button></td></tr>
+      </table>
+      <p>Don't have an account? <a href = '/users/new'> Create Account </a></p>
+    <% end %>
+ </div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+class LiteraryWork < ApplicationRecord
+
+end
